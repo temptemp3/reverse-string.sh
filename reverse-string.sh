@@ -1,6 +1,6 @@
 #!/bin/bash
 ## reverse-string
-## version 0.0.1 - initial
+## version 0.1.0 - add reverse
 ##################################################
 seq() { { local ubound ; ubound="${1}" ; }
   local i
