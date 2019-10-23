@@ -1,6 +1,6 @@
 #!/bin/bash
 ## reverse-string
-## version 0.1.0 - add reverse
+## version 0.1.1 - multi word fix
 ##################################################
 seq() { { local ubound ; ubound="${1}" ; }
   local i
@@ -9,16 +9,13 @@ seq() { { local ubound ; ubound="${1}" ; }
    echo ${i}
   done
 }
-reverse-string() { { local instr ; instr="${1}" ; }
+reverse-string() { { local instr ; instr="${@}" ; }
   for i in $( seq ${#instr} )
   do
    echo -n ${instr:$(( ${#instr} - ${i} )):1}
   done
 }
-reverse ()
-{
-    local str;
-    read -t 1 str;
+reverse () { { local str ; read -t 1 str ; }
     reverse-string ${str}
 }
 ##################################################
