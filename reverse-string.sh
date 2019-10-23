@@ -15,6 +15,12 @@ reverse-string() { { local instr ; instr="${1}" ; }
    echo -n ${instr:$(( ${#instr} - ${i} )):1}
   done
 }
+reverse ()
+{
+    local str;
+    read -t 1 str;
+    reverse-string ${str}
+}
 ##################################################
 if [ ! ] 
 then
